@@ -471,7 +471,8 @@ public class NewJFrame extends javax.swing.JFrame {
         seimosPajamosAtskaiciusMokescius  =     Integer.parseInt(seimosPajamosAtskaiciusMokesciusTextField.getText());
         seimosFinansiniaiIsipareigojimai =  Integer.parseInt(seimosFinansiniaiIsipareigojimaiTextField.getText());
         vaikuSkaiciusSeimoje =  Integer.parseInt(vaikuSkaiciusSeimojeTextField.getText());
-
+        
+        if (vaikuSkaiciausTikrinimas(vaikuSkaiciusSeimoje) && seimosPajamuAtskaiciusMokesciusTikrinimas(seimosPajamosAtskaiciusMokescius) && seimosFinansiniuIsipareigojimuTikrinimas(seimosFinansiniaiIsipareigojimai) && paskolosSuma2 > 300 && paskolosSuma2 < 26000 && laikotarpis <= 5) {
         if (vaikuSkaiciusSeimoje > 0 && vaikuSkaiciusSeimoje < 10 && seimosPajamosAtskaiciusMokescius > 0 && seimosPajamosAtskaiciusMokescius < 10000 && seimosFinansiniaiIsipareigojimai > 0 && seimosFinansiniaiIsipareigojimai < 5000 && paskolosSuma2 > 300 && paskolosSuma2 < 26000 && laikotarpis <= 5){
         // SUTARTIES SUDARYMO MOKESTIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \\
         
@@ -545,6 +546,13 @@ public class NewJFrame extends javax.swing.JFrame {
 +               return false;
 +           }
     }
+    public boolean seimosFinansiniuIsipareigojimuTikrinimas(double isipareigojimai) {
++        if (isipareigojimai > 0 && isipareigojimai < 15000) {
+             return true;
+            } else {
+             return false;
+         }
+    }|
 
     private void seimosPajamosAtskaiciusMokesciusTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seimosPajamosAtskaiciusMokesciusTextFieldActionPerformed
         // TODO add your handling code here:
