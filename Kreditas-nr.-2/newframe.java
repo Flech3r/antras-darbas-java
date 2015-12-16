@@ -353,8 +353,8 @@ public class NewJFrame extends javax.swing.JFrame {
         vaikuSkaiciusSeimoje =  Integer.parseInt(vaikuSkaiciusSeimojeTextField.getText());
             
        
-       if (vaikuSkaiciusSeimoje > 0 && vaikuSkaiciusSeimoje < 10 && seimosPajamosAtskaiciusMokescius > 0 && seimosPajamosAtskaiciusMokescius < 30000 && seimosFinansiniaiIsipareigojimai > 0 && seimosFinansiniaiIsipareigojimai < 15000 && laikotarpis < 40){  
-            
+
+        if (vaikuSkaiciausTikrinimas(vaikuSkaiciusSeimoje) && seimosPajamuAtskaiciusMokesciusTikrinimas(seimosPajamosAtskaiciusMokescius) && seimosFinansiniaiIsipareigojimai > 0 && seimosFinansiniaiIsipareigojimai < 15000 && laikotarpis < 40) {    
      
               
         // SUTARTIES SUDARYMO MOKESTIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \\
@@ -434,12 +434,8 @@ public class NewJFrame extends javax.swing.JFrame {
                  kreditoMenesineImokaTextField.setText(kreditoMenesineImokaApskaiciavimas + ""); 
                  bendrosGrazintinosSUmosApskaiciavimasTextField.setText(bendrosGrazintinosSumosApskaiciavimasAtsakymas + "");
              }  
-       
            // PABAIGA!!!!!!!!!!!!!!  GALIMYBE GRAZINTI KREDITA NUSTATYMUI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \\                        
-  
-       
-       
-                 
+     
           }          
           }else{
            klaidaTextField.setVisible(true);
@@ -557,7 +553,7 @@ public class NewJFrame extends javax.swing.JFrame {
         
         
         if (vaikuSkaiciusSeimoje > 0 && vaikuSkaiciusSeimoje < 10 && seimosPajamosAtskaiciusMokescius > 0 && seimosPajamosAtskaiciusMokescius < 10000 && seimosFinansiniaiIsipareigojimai > 0 && seimosFinansiniaiIsipareigojimai < 5000 && paskolosSuma2 > 300 && paskolosSuma2 < 26000 && laikotarpis <= 5){
-            
+
             
             
         // SUTARTIES SUDARYMO MOKESTIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \\
@@ -647,45 +643,26 @@ public class NewJFrame extends javax.swing.JFrame {
      
         
     }//GEN-LAST:event_atsakymas2ButtonActionPerformed
+    public boolean vaikuSkaiciausTikrinimas(double vaikai){
++           if (vaikai > 0 && vaikai < 10){
++               return true;
++           }else{
++               return false;
++           }
++       }
++
++       public boolean seimosPajamuAtskaiciusMokesciusTikrinimas(double seimosPajamos){
++            if (seimosPajamos > 0 && seimosPajamos < 30000){
++               return true;
++           }else{
++               return false;
++           }
+    }
 
     private void seimosPajamosAtskaiciusMokesciusTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seimosPajamosAtskaiciusMokesciusTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_seimosPajamosAtskaiciusMokesciusTextFieldActionPerformed
-   
-        
-      
-      
-      
-                        
-         
 
-    
-    
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * 
      * @param args the command line arguments
